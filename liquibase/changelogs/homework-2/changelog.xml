@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<databaseChangeLog
+   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro 
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd"
+      logicalFilePath="homework-2">  
+    
+	<changeSet id="homework-2-role" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/01.Role.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-user" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/02.User.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-userroles" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/03.UserRoles.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-location" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/04.Location.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-carmodel" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/05.CarModel.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-insurance" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/06.Insurance.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-car" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/07.Car.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-rental" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/08.Rental.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-feedback" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/09.Feedback.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-add_indexes_car" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/add_indexes_car.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-add_indexes_feedback" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/add_indexes_feedback.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-add_indexes_rental" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/add_indexes_rental.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+	<changeSet id="homework-2-add_indexes_userroles" author="Artsiom Vyshynski">
+        <sqlFile encoding="utf8" path="./sql/add_indexes_userroles.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+	
+</databaseChangeLog> 
