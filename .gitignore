@@ -1,0 +1,12 @@
+# Exclude all .jar files
+*.jar
+liquibase/*.jar
+
+# Exclude all .class files
+*.class
+
+# Exclude all .iml files
+*.iml
+
+# Exclude the .idea folder
+.idea/
