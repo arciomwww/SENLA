@@ -14,13 +14,13 @@ public class CarModelRepository {
     public CarModelRepository() {
         //mock
         carModels.add(new CarModel.Builder()
-                .setId(UUID.randomUUID())
+                .setId(UUID.fromString("6b997424-a6bf-486f-bb80-ea33fd225be0"))
                 .setMake("Tesla")
                 .setModel("Model S")
                 .setYear(2020)
                 .build());
         carModels.add(new CarModel.Builder()
-                .setId(UUID.randomUUID())
+                .setId(UUID.fromString("7c997424-a6bf-486f-bb80-ea33fd225be1"))
                 .setMake("Ford")
                 .setModel("Mustang")
                 .setYear(2019)

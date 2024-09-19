@@ -3,6 +3,8 @@ package org.example.service;
 import org.example.dto.LocationDTO;
 import org.example.database.LocationRepository;
 import org.example.entity.Location;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class LocationService {
+    private static final Logger logger = LoggerFactory.getLogger(LocationService.class);
     private LocationRepository locationRepository;
 
     @Autowired
@@ -20,20 +23,24 @@ public class LocationService {
     }
 
     public List<LocationDTO> getAllLocations() {
+        logger.info("Fetching all locations");
         return locationRepository.findAll().stream().map(this::convertToDTO).collect(Collectors.toList());
     }
 
     public LocationDTO getLocationById(UUID id) {
+        logger.info("Fetching location by ID: {}", id);
         Location location = locationRepository.findById(id);
         return location != null ? convertToDTO(location) : null;
     }
 
     public void createLocation(LocationDTO locationDTO) {
+        logger.info("Creating location: {}", locationDTO);
         Location location = convertToEntity(locationDTO);
         locationRepository.save(location);
     }
 
     public void updateLocation(UUID id, LocationDTO locationDTO) {
+        logger.info("Updating location with ID: {}", id);
         Location location = locationRepository.findById(id);
         if (location != null) {
             location.setName(locationDTO.getName());
@@ -45,6 +52,7 @@ public class LocationService {
     }
 
     public void deleteLocation(UUID id) {
+        logger.info("Deleting location with ID: {}", id);
         locationRepository.delete(id);
     }
 

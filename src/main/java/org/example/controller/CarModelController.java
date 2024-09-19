@@ -5,6 +5,7 @@ import org.example.dto.CarModelDTO;
 import org.example.service.CarModelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.example.annotation.Transaction;
 
 import java.util.List;
 import java.util.UUID;
@@ -26,15 +27,17 @@ public class CarModelController {
     }
 
     @PostMapping("/initialize")
+    @Transaction
     public void initializeCarModels() {
+
         CarModelDTO carModel1 = new CarModelDTO();
-        carModel1.setId(UUID.randomUUID());
+        carModel1.setId(UUID.fromString("6b997424-a6bf-486f-bb80-ea33fd225be0"));
         carModel1.setMake("Tesla");
         carModel1.setModel("Model S");
         carModel1.setYear(2020);
 
         CarModelDTO carModel2 = new CarModelDTO();
-        carModel2.setId(UUID.randomUUID());
+        carModel2.setId(UUID.fromString("7c997424-a6bf-486f-bb80-ea33fd225be1"));
         carModel2.setMake("Ford");
         carModel2.setModel("Mustang");
         carModel2.setYear(2019);
@@ -42,6 +45,7 @@ public class CarModelController {
         carModelService.createCarModel(carModel1);
         carModelService.createCarModel(carModel2);
     }
+
 
     @GetMapping
     public String getAllCarModels() throws Exception {

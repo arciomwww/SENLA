@@ -5,6 +5,7 @@ import org.example.dto.InsuranceDTO;
 import org.example.service.InsuranceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.example.annotation.Transaction;
 
 import java.util.List;
 import java.util.UUID;
@@ -26,15 +27,16 @@ public class InsuranceController {
     }
 
     @PostMapping("/initialize")
+    @Transaction
     public void initializeInsurances() {
         InsuranceDTO insurance1 = new InsuranceDTO();
-        insurance1.setId(UUID.randomUUID());
+        insurance1.setId(UUID.fromString("ac997424-a6bf-486f-bb80-ea33fd225be4"));
         insurance1.setPolicyNumber("POL12345");
         insurance1.setProvider("Provider A");
         insurance1.setCoverageAmount(100000.0);
 
         InsuranceDTO insurance2 = new InsuranceDTO();
-        insurance2.setId(UUID.randomUUID());
+        insurance2.setId(UUID.fromString("bc997424-a6bf-486f-bb80-ea33fd225be5"));
         insurance2.setPolicyNumber("POL67890");
         insurance2.setProvider("Provider B");
         insurance2.setCoverageAmount(200000.0);

@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.annotation.Transaction;
 import org.example.dto.LocationDTO;
 import org.example.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,25 +27,25 @@ public class LocationController {
     }
 
     @PostMapping("/initialize")
+    @Transaction
     public void initializeLocations() {
         LocationDTO location1 = new LocationDTO();
-        location1.setId(UUID.randomUUID());
+        location1.setId(UUID.fromString("8c997424-a6bf-486f-bb80-ea33fd225be2"));
         location1.setName("Location 1");
         location1.setAddress("123 Main St");
         location1.setCity("City A");
         location1.setCountry("State A");
 
-
         LocationDTO location2 = new LocationDTO();
-        location2.setId(UUID.randomUUID());
+        location2.setId(UUID.fromString("9c997424-a6bf-486f-bb80-ea33fd225be3"));
         location2.setName("Location 2");
         location2.setAddress("456 Elm St");
         location2.setCity("City B");
         location2.setCountry("State B");
 
-
         locationService.createLocation(location1);
         locationService.createLocation(location2);
+
     }
 
     @GetMapping
